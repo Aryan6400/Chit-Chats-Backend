@@ -14,7 +14,8 @@ import { createGroups, renameGroups, addInGroups, removeFromGroups } from "./con
 import { getUsers } from "./controllers/user/user.js";
 import { accessChats, getChats } from "./controllers/chat/chat.js";
 import { getMessages, createMessages } from "./controllers/messages/messages.js";
-import { notFound, handleError } from "./middleware/errorHandler.js";
+// import { notFound, handleError } from "./middleware/errorHandler.js";
+const port = process.env.PORT || 8080;
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,10 +29,6 @@ mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true })
 }).catch(error => {
     console.error('Error connecting to MongoDB:', error);
 });
-
-app.get('/', (req, res) => {
-    res.send("Hi");
-})
 
 // app.use(notFound);
 // app.use(handleError);
@@ -58,8 +55,8 @@ app.post("/messages", auth, createMessages);
 
 
 
-const server = app.listen(8080, function () {
-    console.log('Server started on port 8080');
+const server = app.listen(port, function () {
+    console.log(`Server started on port ${port}`);
 });
 
 const io = socket(server, {
