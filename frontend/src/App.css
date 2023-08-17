@@ -1,0 +1,43 @@
+#AppContainer {
+  padding: 25px 30px 40px;
+  margin: 20px 50px;
+  height: fit-content;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  max-height: 100%;
+}
+
+#left-panel {
+  padding: 0 10px;
+  border-radius: 7px;
+  background-color: rgb(244, 244, 238);
+  max-height: 90vh;
+  min-width: 220px;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+#right-panel {
+  padding: 0 30px;
+  border-radius: 7px;
+  background-color: rgb(244, 244, 238);
+  max-height: 90vh;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+#welcome-panel {
+  padding: 0 30px;
+  border-radius: 7px;
+  background-color: rgb(244, 244, 238);
+  max-height: 90vh;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

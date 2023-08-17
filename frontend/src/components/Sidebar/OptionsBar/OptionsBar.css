@@ -1,0 +1,90 @@
+.options-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.options-container hr{
+    margin: 10px 20px 20px;
+}
+
+.user-profile{
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-image img, .user-image svg{
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+}
+
+.user-image svg{
+    color: rgb(200, 200, 200);
+    background-color: rgb(231, 231, 231);
+}
+
+
+.username h2{
+    cursor: pointer;
+}
+
+.search-bar-and-options{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: fit-content;
+    margin: auto;
+}
+
+.options-div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.options-div svg{
+    padding: 3px;
+}
+
+.options-div svg:hover{
+    cursor: pointer;
+    background-color: rgb(168, 168, 168);
+    border-radius: 100%;
+}
+
+.search-bar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* padding-left: 20px; */
+}
+
+#search{
+    width: 11.75rem;
+    height: 1.7rem;
+    border-radius: 27px;
+    border: 1px solid rgb(210, 210, 210);
+    box-shadow: 0 0 2px rgb(210, 210, 210);
+    text-align: center;
+    color: black;
+}
+
+@media (max-width: 1300px) {
+    .search-bar-and-options{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    .search-bar{
+        padding-left: 0px;
+    }
+}

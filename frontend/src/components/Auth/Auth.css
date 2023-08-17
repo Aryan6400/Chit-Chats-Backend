@@ -1,0 +1,90 @@
+.auth-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-top: 7rem;
+}
+
+.signup-comp {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-comp h1 {
+    margin: 40px 0;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 255, 0.237);
+    width: 440px;
+    padding: 5px;
+}
+
+.register-form-box {
+    font-size: 1.2rem;
+    display: grid;
+    gap: 20px;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1.75fr;
+}
+
+.login-form-box {
+    font-size: 1.2rem;
+    display: grid;
+    gap: 20px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1.75fr;
+}
+
+.login-form-box input, .register-form-box input {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-image: linear-gradient(150deg, rgba(0, 0, 255, 0.237), transparent);
+    text-align: center;
+}
+
+.form-email {
+    height: 30px;
+}
+
+.btn-register {
+    font-size: 1.2rem;
+    padding: 3px 7px;
+    border: 1px;
+    border-radius: 5px;
+    margin: 15px 0;
+    color: blue;
+    grid-area: 5/2/6/3;
+    border: 1px solid rgba(0, 0, 255, 0.237);
+}
+
+.btn-login {
+    font-size: 1.2rem;
+    padding: 3px 7px;
+    border: 1px;
+    border-radius: 5px;
+    margin: 15px 0;
+    color: blue;
+    grid-area: 3/2/4/3;
+    border: 1px solid rgba(0, 0, 255, 0.237);
+}
+
+.btn-login:hover, .btn-register:hover{
+    cursor: pointer;
+    border: 1px solid blue;
+}
+
+.form-password {
+    height: 30px;
+}
+
+#form-picture{
+    background-image: none;
+    border: none;
+}
+
+.picture-input-div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 1px;
+}

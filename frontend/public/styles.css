@@ -1,0 +1,150 @@
+html {
+    background-color: rgb(244, 244, 238);
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    margin: 0 1.2rem;
+}
+
+hr {
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+::placeholder {
+    color: rgb(185, 185, 165);
+    font-size: 1rem;
+}
+
+#chat-input {
+    width: 90%;
+    height: 2.5rem;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    padding: 5px 10px;
+}
+
+
+
+
+/* Min Width media queries........ */
+
+@media (min-width: 1000px) {
+    body {
+        width: calc(100% - 20px);
+        margin: auto;
+    }
+}
+
+@media (min-width: 700px) {
+    body {
+        width: calc(100% - 0px);
+        margin: auto;
+    }
+}
+
+@media (min-width: 400px) {
+    .chat p {
+        width: 330px;
+        /* margin: 10px auto 20px; */
+    }
+}
+
+
+
+
+
+/* Max Width media queries.... */
+
+@media (max-width: 300px) {
+    .header p {
+        font-size: 0.8rem;
+    }
+
+    .header span {
+        font-size: 1rem;
+    }
+
+    .header .avatar img {
+        border-radius: 50%;
+        max-width: 30px;
+        min-width: 20px;
+    }
+
+    .chatText,
+    .myChatText {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .header p {
+        font-size: 1rem;
+    }
+
+    .header span {
+        font-size: 1.2rem;
+    }
+
+    .header .avatar img {
+        border-radius: 50%;
+        max-width: 45px;
+        min-width: 30px;
+    }
+
+    .chatText,
+    .myChatText {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .header p {
+        font-size: 1.1rem;
+    }
+
+    .header span {
+        font-size: 1.3rem;
+    }
+
+    .header .avatar img {
+        border-radius: 50%;
+        max-width: 60px;
+        min-width: 40px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .chatText,
+    .myChatText {
+        font-size: 0.8rem;
+    }
+}
+
+
+.dark-theme-font {
+    color: white !important;
+}
+.dark-panel {
+    background-color: rgb(50, 50, 50) !important;
+}
+.dark-chat-box {
+    background-color: rgb(60, 60, 60) !important;
+    box-shadow: 0 0 1px rgb(180, 180, 180) !important;
+}
+.dark-chat-box:hover{
+    background-color: rgb(110, 110, 110) !important;
+}
+.dark-container{
+    background-image: radial-gradient(white, rgb(35, 35, 35)) !important;
+}
+.dark-input {
+    background-color: rgb(147, 147, 147) !important;
+    color: white !important;
+}
+.dark-create-div{
+    background-color: rgb(60, 60, 60) !important;
+}

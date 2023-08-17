@@ -1,0 +1,21 @@
+.create-group-container{
+    display: flex;
+    flex: 0.7;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    background-color: white;
+    padding: 20px 10px;
+    margin: 10px;
+}
+
+.create-group{
+    width: 85%;
+    min-width: 15rem;
+    height: 2.5rem;
+    border-radius: 17px;
+    border: 1px solid rgb(210, 210, 210);
+    box-shadow: 0 0 2px rgb(210, 210, 210);
+    text-align: center;
+    color: black;
+}
