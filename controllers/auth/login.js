@@ -8,7 +8,8 @@ async function register(req, res){
         name,
         username,
         password,
-        picture
+        picture,
+        resizedPicture
     } = req.body;
     try{
         const foundUser = await User.findOne({username:username});
@@ -19,7 +20,8 @@ async function register(req, res){
             name,
             username,
             password: hashedPassword,
-            picture
+            picture,
+            resizedPicture
         })
         const savedUser = await newUser.save();
         const token = jwt.sign({id: savedUser._id}, process.env.USER_SECRET, {expiresIn:"12hr"})
@@ -37,7 +39,7 @@ async function login(req, res) {
         const passwordMatched = await bcrypt.compare(password, foundUser.password);
         if(!passwordMatched) return res.status(400).json({message: "Invalid Credentials!"});
         
-        const token = jwt.sign({id: foundUser._id}, process.env.USER_SECRET, {expiresIn:"12hr"})
+        const token = jwt.sign({id: foundUser._id}, process.env.USER_SECRET, {expiresIn:"12hr"});
         res.status(200).json({token: token, user: foundUser});
     } catch(err){
         res.status(500).json({message: err.message})

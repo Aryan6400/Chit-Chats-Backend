@@ -14,8 +14,6 @@ const getChats = asyncHandler(async (req, res) => {
             path: "lastMessage.sender",
             select: "name username",
         });
-        // console.log(chats);
-        // console.log(req.userId);
         res.send(chats);
     } catch (error) {
         res.status(400).json({ message: error.message });
@@ -40,21 +38,19 @@ const accessChats = asyncHandler(async (req, res) => {
         select: "name username",
     });
     if (chats.length > 0) {
-        res.status(200).json(chats[0]);
+        res.status(200).json([]);
     }
     else {
         const receiver = await User.find({ _id: userId });
         const sender = await User.find({ _id: req.userId });
         const chatName = sender[0].name + "+" + receiver[0].name;
-        const picturePath = sender[0].picture + "+" + receiver[0].picture;
+        const picturePath = sender[0].resizedPicture + "+" + receiver[0].resizedPicture;
         const newChat = {
             name: chatName,
             isGroup: false,
             users: [userId, req.userId],
             picture: picturePath
         };
-        console.log(chatName);
-        console.log(picturePath);
         try {
             const createdChat = await Chat.create(newChat);
             const updatedReceiver = await User.findByIdAndUpdate(userId, { $push: { chats: createdChat._id } });

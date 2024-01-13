@@ -14,5 +14,23 @@ async function getUsers(req, res) {
     res.send(users);
 }
 
+async function changePicture(req, res) {
+    try{
+        const {
+            picture,
+            resizedPicture
+        } = req.body;
+        console.log(picture,resizedPicture);
+        await User.findByIdAndUpdate(req.userId, {
+            picture: picture,
+            resizedPicture: resizedPicture
+        });
+        const user=await User.find({_id:req.userId});
+        console.log(user);
+        res.status(201).json({user:user});
+    } catch(error){
+        res.status(401).json({message:error.message});
+    }
+}
 
-export { getUsers };
+export { getUsers, changePicture };

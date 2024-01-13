@@ -6,7 +6,7 @@ import asyncHandler from 'express-async-handler';
 const getMessages = asyncHandler( async (req, res) => {
     try {
         const messages = await Message.find({chatId:req.params.chatId})
-        .populate("sender", "name picture username")
+        .populate("sender", "name resizedPicture username")
         .populate("chatId");
 
         res.status(200).json(messages);
@@ -17,7 +17,6 @@ const getMessages = asyncHandler( async (req, res) => {
 
 const createMessages = asyncHandler( async (req, res) => {
     const {text, chatId} = req.body;
-    console.log(req.body);
     if(!text || !chatId) {
         res.status(401).json({message: "Invalid data!!"})
     }
@@ -29,7 +28,7 @@ const createMessages = asyncHandler( async (req, res) => {
     try {
         let message = await Message.create(newMessage);
 
-        message = await message.populate("sender", "name picture");
+        message = await message.populate("sender", "name resizedPicture");
         message = await message.populate("chatId");
         message = await User.populate(message, {
             path: "chat.users",
